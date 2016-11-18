@@ -1,0 +1,67 @@
+  [1m[35m (110.3ms)[0m  [1m[35mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (109.5ms)[0m  [1m[35mCREATE TABLE "rankings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "stars" integer, "movie_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (99.2ms)[0m  [1m[35mCREATE  INDEX "index_rankings_on_movie_id" ON "rankings" ("movie_id")[0m
+  [1m[35m (88.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (155.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20161117034319')[0m
+  [1m[35m (143.8ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES ('20161117034308');
+
+[0m
+  [1m[35m (86.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2016-11-18 01:41:33 UTC], ["updated_at", 2016-11-18 01:41:33 UTC]]
+  [1m[35m (76.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "rankings"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "rankings" ("stars", "created_at", "updated_at", "id", "movie_id") VALUES (1, '2016-11-18 01:45:07.012667', '2016-11-18 01:45:07.012667', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "rankings" ("stars", "created_at", "updated_at", "id", "movie_id") VALUES (1, '2016-11-18 01:45:07.012667', '2016-11-18 01:45:07.012667', 298486374, 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "movies"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-11-18 01:45:07.018904', '2016-11-18 01:45:07.018904', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-11-18 01:45:07.018904', '2016-11-18 01:45:07.018904', 298486374)[0m
+  [1m[35m (76.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+-------------------------
+MovieTest: test_the_truth
+-------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------
+RankingTest: test_ranking_is_num
+--------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+RankingTest: test_ranking_values_1_5
+------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "rankings"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "rankings" ("stars", "created_at", "updated_at", "id", "movie_id") VALUES (1, '2016-11-18 01:45:51.145484', '2016-11-18 01:45:51.145484', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "rankings" ("stars", "created_at", "updated_at", "id", "movie_id") VALUES (1, '2016-11-18 01:45:51.145484', '2016-11-18 01:45:51.145484', 298486374, 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "movies"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-11-18 01:45:51.150448', '2016-11-18 01:45:51.150448', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-11-18 01:45:51.150448', '2016-11-18 01:45:51.150448', 298486374)[0m
+  [1m[35m (80.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------
+RankingTest: test_ranking_is_num
+--------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+RankingTest: test_ranking_values_1_5
+------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------
+MovieTest: test_the_truth
+-------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m

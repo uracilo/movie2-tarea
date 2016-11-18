@@ -1,19 +1,16 @@
 require 'test_helper'
 
 class RankingTest < ActiveSupport::TestCase
-  test "values" do
-  	if 1 -5
-  		puts "validate"
-  		assert true
-  		assert_not_kind_of( class, int, [msg] )
-  		assert_empty( obj, [msg] )
-  		assert_not_empty( obj, [msg] )
-  		
-  	end
-    assert true
+  test "ranking_values_1_5" do
+  	  @ranking = 3
+     assert_includes  1..5, @ranking, "My test"  	
+  end
+
+  test "ranking_is_num" do      
+      @ranking = 3
+      assert_instance_of 3.class, @ranking, "ranking_is_num"
   end
 end
 
-test do
-	prom true
-end
+
+
