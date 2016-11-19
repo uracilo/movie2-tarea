@@ -45,4 +45,21 @@ class AnimalesControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to animales_url
   end
+
+
+  test "finish the test" do
+    flunk "the test has been finished"
+  end
+
+
+  
+
+
+
+
+
+
+
+
+
 end

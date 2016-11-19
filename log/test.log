@@ -755,3 +755,521 @@ Processing by DistributionsController#new as HTML
   Rendered distributions/new.html.erb within layouts/application (2.0ms)
 Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms)
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (16.1ms)[0m  [1m[31mDELETE FROM "animales"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "animales" ("name", "scientificname", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-11-19 02:49:41.853622', '2016-11-19 02:49:41.853622', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "animales" ("name", "scientificname", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-11-19 02:49:41.853622', '2016-11-19 02:49:41.853622', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "rankings"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "rankings" ("stars", "created_at", "updated_at", "id", "movie_id") VALUES (1, '2016-11-19 02:49:41.895996', '2016-11-19 02:49:41.895996', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "rankings" ("stars", "created_at", "updated_at", "id", "movie_id") VALUES (1, '2016-11-19 02:49:41.895996', '2016-11-19 02:49:41.895996', 298486374, 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "movies"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-11-19 02:49:41.898871', '2016-11-19 02:49:41.898871', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-11-19 02:49:41.898871', '2016-11-19 02:49:41.898871', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "distributions"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "distributions" ("country", "created_at", "updated_at", "id") VALUES ('MyString', '2016-11-19 02:49:41.901254', '2016-11-19 02:49:41.901254', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "distributions" ("country", "created_at", "updated_at", "id") VALUES ('MyString', '2016-11-19 02:49:41.901254', '2016-11-19 02:49:41.901254', 298486374)[0m
+  [1m[35m (110.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------
+MovieTest: test_the_truth
+-------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+DistributionsControllerTest: test_should_destroy_distribution
+-------------------------------------------------------------
+  [1m[36mDistribution Load (0.3ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "distributions"[0m
+Started DELETE "/distributions/980190962" for 127.0.0.1 at 2016-11-18 20:49:42 -0600
+Processing by DistributionsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mDistribution Load (0.1ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "distributions" WHERE "distributions"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/distributions
+Completed 302 Found in 62ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "distributions"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+DistributionsControllerTest: test_should_update_distribution
+------------------------------------------------------------
+  [1m[36mDistribution Load (0.1ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/distributions/980190962" for 127.0.0.1 at 2016-11-18 20:49:43 -0600
+Processing by DistributionsController#update as HTML
+  Parameters: {"distribution"=>{"country"=>"MyString"}, "id"=>"980190962"}
+  [1m[36mDistribution Load (0.1ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/distributions/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+DistributionsControllerTest: test_should_get_edit
+-------------------------------------------------
+  [1m[36mDistribution Load (0.1ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/distributions/980190962/edit" for 127.0.0.1 at 2016-11-18 20:49:43 -0600
+Processing by DistributionsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mDistribution Load (0.0ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering distributions/edit.html.erb within layouts/application
+  Rendered distributions/_form.html.erb (91.4ms)
+  Rendered distributions/edit.html.erb within layouts/application (115.6ms)
+Completed 200 OK in 409ms (Views: 397.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+DistributionsControllerTest: test_should_get_new
+------------------------------------------------
+  [1m[36mDistribution Load (0.1ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/distributions/new" for 127.0.0.1 at 2016-11-18 20:49:43 -0600
+Processing by DistributionsController#new as HTML
+  Rendering distributions/new.html.erb within layouts/application
+  Rendered distributions/_form.html.erb (1.9ms)
+  Rendered distributions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 18ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+DistributionsControllerTest: test_should_get_index
+--------------------------------------------------
+  [1m[36mDistribution Load (0.1ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/distributions" for 127.0.0.1 at 2016-11-18 20:49:43 -0600
+Processing by DistributionsController#index as HTML
+  Rendering distributions/index.html.erb within layouts/application
+  [1m[36mDistribution Load (0.2ms)[0m  [1m[34mSELECT "distributions".* FROM "distributions"[0m
+  Rendered distributions/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 15ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------
+DistributionsControllerTest: test_should_show_distribution
+----------------------------------------------------------
+  [1m[36mDistribution Load (0.1ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/distributions/980190962" for 127.0.0.1 at 2016-11-18 20:49:43 -0600
+Processing by DistributionsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mDistribution Load (0.0ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering distributions/show.html.erb within layouts/application
+  Rendered distributions/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+DistributionsControllerTest: test_should_create_distribution
+------------------------------------------------------------
+  [1m[36mDistribution Load (0.1ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "distributions"[0m
+Started POST "/distributions" for 127.0.0.1 at 2016-11-18 20:49:43 -0600
+Processing by DistributionsController#create as HTML
+  Parameters: {"distribution"=>{"country"=>"MyString"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "distributions" ("country", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["country", "MyString"], ["created_at", 2016-11-19 02:49:43 UTC], ["updated_at", 2016-11-19 02:49:43 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/distributions/980190963
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "distributions"[0m
+  [1m[36mDistribution Load (0.1ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" ORDER BY "distributions"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+AnimalesControllerTest: test_should_get_index
+---------------------------------------------
+  [1m[36mAnimale Load (0.2ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/animales" for 127.0.0.1 at 2016-11-18 20:49:43 -0600
+Processing by AnimalesController#index as HTML
+  Rendering animales/index.html.erb within layouts/application
+  [1m[36mAnimale Load (0.2ms)[0m  [1m[34mSELECT "animales".* FROM "animales"[0m
+  Rendered animales/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+AnimalesControllerTest: test_should_update_animale
+--------------------------------------------------
+  [1m[36mAnimale Load (0.1ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/animales/980190962" for 127.0.0.1 at 2016-11-18 20:49:43 -0600
+Processing by AnimalesController#update as HTML
+  Parameters: {"animale"=>{"name"=>"MyString", "scientificname"=>"MyString"}, "id"=>"980190962"}
+  [1m[36mAnimale Load (0.0ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/animales/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+AnimalesControllerTest: test_should_get_edit
+--------------------------------------------
+  [1m[36mAnimale Load (0.1ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/animales/980190962/edit" for 127.0.0.1 at 2016-11-18 20:49:43 -0600
+Processing by AnimalesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mAnimale Load (0.0ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering animales/edit.html.erb within layouts/application
+  Rendered animales/_form.html.erb (2.3ms)
+  Rendered animales/edit.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+AnimalesControllerTest: test_should_get_new
+-------------------------------------------
+  [1m[36mAnimale Load (0.1ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/animales/new" for 127.0.0.1 at 2016-11-18 20:49:43 -0600
+Processing by AnimalesController#new as HTML
+  Rendering animales/new.html.erb within layouts/application
+  Rendered animales/_form.html.erb (2.1ms)
+  Rendered animales/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+AnimalesControllerTest: test_finish_the_test
+--------------------------------------------
+  [1m[36mAnimale Load (0.1ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+AnimalesControllerTest: test_should_create_animale
+--------------------------------------------------
+  [1m[36mAnimale Load (0.1ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "animales"[0m
+Started POST "/animales" for 127.0.0.1 at 2016-11-18 20:49:43 -0600
+Processing by AnimalesController#create as HTML
+  Parameters: {"animale"=>{"name"=>"MyString", "scientificname"=>"MyString"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "animales" ("name", "scientificname", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "MyString"], ["scientificname", "MyString"], ["created_at", 2016-11-19 02:49:43 UTC], ["updated_at", 2016-11-19 02:49:43 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/animales/980190963
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "animales"[0m
+  [1m[36mAnimale Load (0.1ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" ORDER BY "animales"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+AnimalesControllerTest: test_should_destroy_animale
+---------------------------------------------------
+  [1m[36mAnimale Load (0.1ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "animales"[0m
+Started DELETE "/animales/980190962" for 127.0.0.1 at 2016-11-18 20:49:43 -0600
+Processing by AnimalesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mAnimale Load (0.1ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "animales" WHERE "animales"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/animales
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "animales"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+AnimalesControllerTest: test_should_show_animale
+------------------------------------------------
+  [1m[36mAnimale Load (0.1ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/animales/980190962" for 127.0.0.1 at 2016-11-18 20:49:43 -0600
+Processing by AnimalesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mAnimale Load (0.0ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering animales/show.html.erb within layouts/application
+  Rendered animales/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+RankingTest: test_ranking_is_not_num
+------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------
+RankingTest: test_test_finished
+-------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+RankingTest: test_ranking_values_1_5
+------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+RankingTest: test_ranking_not_nil
+---------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+RankingTest: test_ranking_is_not_the_same
+-----------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+RankingTest: test_ranking_is_the_same
+-------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------
+RankingTest: test_ranking_is_num
+--------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "animales"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "animales" ("name", "scientificname", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-11-19 03:03:47.054212', '2016-11-19 03:03:47.054212', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "animales" ("name", "scientificname", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-11-19 03:03:47.054212', '2016-11-19 03:03:47.054212', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "rankings"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "rankings" ("stars", "created_at", "updated_at", "id", "movie_id") VALUES (1, '2016-11-19 03:03:47.059432', '2016-11-19 03:03:47.059432', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "rankings" ("stars", "created_at", "updated_at", "id", "movie_id") VALUES (1, '2016-11-19 03:03:47.059432', '2016-11-19 03:03:47.059432', 298486374, 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "movies"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-11-19 03:03:47.062020', '2016-11-19 03:03:47.062020', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "movies" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2016-11-19 03:03:47.062020', '2016-11-19 03:03:47.062020', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "distributions"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "distributions" ("country", "created_at", "updated_at", "id") VALUES ('MyString', '2016-11-19 03:03:47.064210', '2016-11-19 03:03:47.064210', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "distributions" ("country", "created_at", "updated_at", "id") VALUES ('MyString', '2016-11-19 03:03:47.064210', '2016-11-19 03:03:47.064210', 298486374)[0m
+  [1m[35m (142.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+RankingTest: test_ranking_is_not_the_same
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------
+RankingTest: test_ranking_is_num
+--------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+RankingTest: test_ranking_not_nil
+---------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+RankingTest: test_ranking_is_the_same
+-------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------
+RankingTest: test_test_finished
+-------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+RankingTest: test_ranking_is_not_num
+------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+RankingTest: test_ranking_values_1_5
+------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+DistributionsControllerTest: test_should_destroy_distribution
+-------------------------------------------------------------
+  [1m[36mDistribution Load (0.2ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "distributions"[0m
+Started DELETE "/distributions/980190962" for 127.0.0.1 at 2016-11-18 21:03:47 -0600
+Processing by DistributionsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mDistribution Load (0.1ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "distributions" WHERE "distributions"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/distributions
+Completed 302 Found in 25ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "distributions"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------
+DistributionsControllerTest: test_should_show_distribution
+----------------------------------------------------------
+  [1m[36mDistribution Load (0.1ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/distributions/980190962" for 127.0.0.1 at 2016-11-18 21:03:47 -0600
+Processing by DistributionsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mDistribution Load (0.1ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering distributions/show.html.erb within layouts/application
+  Rendered distributions/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 160ms (Views: 158.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+DistributionsControllerTest: test_should_get_index
+--------------------------------------------------
+  [1m[36mDistribution Load (0.1ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/distributions" for 127.0.0.1 at 2016-11-18 21:03:47 -0600
+Processing by DistributionsController#index as HTML
+  Rendering distributions/index.html.erb within layouts/application
+  [1m[36mDistribution Load (0.1ms)[0m  [1m[34mSELECT "distributions".* FROM "distributions"[0m
+  Rendered distributions/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+DistributionsControllerTest: test_should_create_distribution
+------------------------------------------------------------
+  [1m[36mDistribution Load (0.1ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "distributions"[0m
+Started POST "/distributions" for 127.0.0.1 at 2016-11-18 21:03:47 -0600
+Processing by DistributionsController#create as HTML
+  Parameters: {"distribution"=>{"country"=>"MyString"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "distributions" ("country", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["country", "MyString"], ["created_at", 2016-11-19 03:03:47 UTC], ["updated_at", 2016-11-19 03:03:47 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/distributions/980190963
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "distributions"[0m
+  [1m[36mDistribution Load (0.1ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" ORDER BY "distributions"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+DistributionsControllerTest: test_should_get_edit
+-------------------------------------------------
+  [1m[36mDistribution Load (0.1ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/distributions/980190962/edit" for 127.0.0.1 at 2016-11-18 21:03:47 -0600
+Processing by DistributionsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mDistribution Load (0.0ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering distributions/edit.html.erb within layouts/application
+  Rendered distributions/_form.html.erb (11.9ms)
+  Rendered distributions/edit.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+DistributionsControllerTest: test_should_get_new
+------------------------------------------------
+  [1m[36mDistribution Load (0.1ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/distributions/new" for 127.0.0.1 at 2016-11-18 21:03:47 -0600
+Processing by DistributionsController#new as HTML
+  Rendering distributions/new.html.erb within layouts/application
+  Rendered distributions/_form.html.erb (1.7ms)
+  Rendered distributions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------
+DistributionsControllerTest: test_should_update_distribution
+------------------------------------------------------------
+  [1m[36mDistribution Load (0.1ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/distributions/980190962" for 127.0.0.1 at 2016-11-18 21:03:47 -0600
+Processing by DistributionsController#update as HTML
+  Parameters: {"distribution"=>{"country"=>"MyString"}, "id"=>"980190962"}
+  [1m[36mDistribution Load (0.0ms)[0m  [1m[34mSELECT  "distributions".* FROM "distributions" WHERE "distributions"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/distributions/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------
+MovieTest: test_the_truth
+-------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+AnimalesControllerTest: test_should_create_animale
+--------------------------------------------------
+  [1m[36mAnimale Load (0.1ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "animales"[0m
+Started POST "/animales" for 127.0.0.1 at 2016-11-18 21:03:47 -0600
+Processing by AnimalesController#create as HTML
+  Parameters: {"animale"=>{"name"=>"MyString", "scientificname"=>"MyString"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "animales" ("name", "scientificname", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "MyString"], ["scientificname", "MyString"], ["created_at", 2016-11-19 03:03:47 UTC], ["updated_at", 2016-11-19 03:03:47 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/animales/980190963
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "animales"[0m
+  [1m[36mAnimale Load (0.1ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" ORDER BY "animales"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+AnimalesControllerTest: test_should_destroy_animale
+---------------------------------------------------
+  [1m[36mAnimale Load (0.1ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "animales"[0m
+Started DELETE "/animales/980190962" for 127.0.0.1 at 2016-11-18 21:03:47 -0600
+Processing by AnimalesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mAnimale Load (0.0ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "animales" WHERE "animales"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/animales
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "animales"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+AnimalesControllerTest: test_should_show_animale
+------------------------------------------------
+  [1m[36mAnimale Load (0.1ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/animales/980190962" for 127.0.0.1 at 2016-11-18 21:03:47 -0600
+Processing by AnimalesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mAnimale Load (0.0ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering animales/show.html.erb within layouts/application
+  Rendered animales/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+AnimalesControllerTest: test_should_get_new
+-------------------------------------------
+  [1m[36mAnimale Load (0.1ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/animales/new" for 127.0.0.1 at 2016-11-18 21:03:47 -0600
+Processing by AnimalesController#new as HTML
+  Rendering animales/new.html.erb within layouts/application
+  Rendered animales/_form.html.erb (2.3ms)
+  Rendered animales/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+AnimalesControllerTest: test_should_get_index
+---------------------------------------------
+  [1m[36mAnimale Load (0.1ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/animales" for 127.0.0.1 at 2016-11-18 21:03:47 -0600
+Processing by AnimalesController#index as HTML
+  Rendering animales/index.html.erb within layouts/application
+  [1m[36mAnimale Load (0.1ms)[0m  [1m[34mSELECT "animales".* FROM "animales"[0m
+  Rendered animales/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+AnimalesControllerTest: test_finish_the_test
+--------------------------------------------
+  [1m[36mAnimale Load (0.1ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+AnimalesControllerTest: test_should_get_edit
+--------------------------------------------
+  [1m[36mAnimale Load (0.1ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/animales/980190962/edit" for 127.0.0.1 at 2016-11-18 21:03:48 -0600
+Processing by AnimalesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mAnimale Load (0.0ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering animales/edit.html.erb within layouts/application
+  Rendered animales/_form.html.erb (2.0ms)
+  Rendered animales/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+AnimalesControllerTest: test_should_update_animale
+--------------------------------------------------
+  [1m[36mAnimale Load (0.1ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/animales/980190962" for 127.0.0.1 at 2016-11-18 21:03:48 -0600
+Processing by AnimalesController#update as HTML
+  Parameters: {"animale"=>{"name"=>"MyString", "scientificname"=>"MyString"}, "id"=>"980190962"}
+  [1m[36mAnimale Load (0.0ms)[0m  [1m[34mSELECT  "animales".* FROM "animales" WHERE "animales"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/animales/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
